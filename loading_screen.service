@@ -1,0 +1,13 @@
+[Unit]
+Description=Loading Screen Server
+After=multi-user.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/TESTS/Autoscope_1.2_TEST
+ExecStart=/usr/bin/python3 -m http.server 8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

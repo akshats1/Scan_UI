@@ -1,0 +1,11 @@
+[Unit]
+Description=Clear Chromium "Restore Pages" nag
+
+[Service]
+ExecStart=/bin/bash -c "sed -i 's/\"exit_type\":\"Crashed\"/\"exit_type\":\"Normal\"/g' '/home/pi/.config/chromium/Default/Preferences'"
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
+

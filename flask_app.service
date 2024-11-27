@@ -1,0 +1,14 @@
+[Unit]
+Description=Autoscope Server
+After=multi-user.target loading_screen.service
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/TESTS/Scanner/Autoscope_1.2_Scan
+ExecStart=/home/pi/TESTS/Scanner/Autoscope_1.2_Scan/start_flask.sh
+Restart=always
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=multi-user.target
+
